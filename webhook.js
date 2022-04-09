@@ -1,10 +1,7 @@
 /*
- * @Author: your name
- * @Date: 2022-03-27 15:24:07
- * @LastEditTime: 2022-03-27 16:17:30
- * @LastEditors: Please set LastEditors
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: /nginx-docker/vue-webhook/webhook.js
+ * @@author: Creator
+ * @LastEditTime: 2022-04-09 18:44:52
+ * @Description: 
  */
 const http = require('http')
 let crypto = require('crypto')
@@ -15,6 +12,7 @@ function sign(body) {
 }
 let server = http.createServer(function (req, res) {
     if (res.method === 'PSOT' && req.url === '/webhook') {
+        console.log('/webhook.js')
         // 获取请求体
         let buffers = []
         req.on('data', function (buffer) {
@@ -33,16 +31,17 @@ let server = http.createServer(function (req, res) {
 
             //部署脚本
             if (event == 'push') {
-                let payload = JSON.parse(body)
-                let child = spawn('sh', [`./${payload.repository.name}.sh`]) // 开启子进程
-                let buffers = []
-                child.stdout.on('data', function (buffer) {
-                    buffers.push(buffer)
-                })
-                child.stdout.on('end', function (buffer) {
-                    let log = BUffer.concat(buffers)
-                    console.log(log)
-                })
+                console.log('webhook:push')
+                // let payload = JSON.parse(body)
+                // let child = spawn('sh', [`./${payload.repository.name}.sh`]) // 开启子进程
+                // let buffers = []
+                // child.stdout.on('data', function (buffer) {
+                //     buffers.push(buffer)
+                // })
+                // child.stdout.on('end', function (buffer) {
+                //     let log = BUffer.concat(buffers)
+                //     console.log(log)
+                // })
             }
         })
     } else {

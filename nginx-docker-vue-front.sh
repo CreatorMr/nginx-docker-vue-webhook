@@ -1,11 +1,11 @@
 #!/bin/bash
 ###
  # @@author: Creator
- # @LastEditTime: 2022-04-09 20:34:14
+ # @LastEditTime: 2022-04-09 20:39:06
  # @Description: 
 ### 
 
-WORK_PATH="/usr/projects/vue-front"
+WORK_PATH="/usr/projects/nginx-docker-vue-front"
 cd $WORK_PATH
 echo "先清除老代码"
 git reset --hard origin/main

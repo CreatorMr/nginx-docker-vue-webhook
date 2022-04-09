@@ -1,11 +1,11 @@
 /*
  * @@author: Creator
- * @LastEditTime: 2022-04-09 18:52:46
+ * @LastEditTime: 2022-04-09 19:54:29
  * @Description: 
  */
 const http = require('http')
 let crypto = require('crypto')
-let { spawn } = require('spawn')
+let { spawn } = require('cross-spawn')
 let SECRET = '123456'
 function sign(body) {
     return `sha1=` + crypto.createHmac('sha1', SECRET).update(body).digest('hex')

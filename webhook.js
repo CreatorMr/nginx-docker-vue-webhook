@@ -1,6 +1,6 @@
 /*
  * @@author: Creator
- * @LastEditTime: 2022-04-09 20:06:05
+ * @LastEditTime: 2022-04-09 20:08:12
  * @Description: 
  */
 const http = require('http')
@@ -12,7 +12,7 @@ function sign(body) {
 }
 let server = http.createServer(function (req, res) {
     console.log(req.method, req.url, '/webhook.js')
-    if (req.method === 'PSOT' && req.url === '/webhook') {
+    if (req.method === 'POST' && req.url === '/webhook') {
         console.log('/webhook.js')
         // 获取请求体
         let buffers = []
@@ -35,15 +35,15 @@ let server = http.createServer(function (req, res) {
                 console.log('webhook:push')
                 let payload = JSON.parse(body)
                 console.log(payload, 'payload-repositoryName')
-                // let child = spawn('sh', [`./${payload.repository.name}.sh`]) // 开启子进程
-                // let buffers = []
-                // child.stdout.on('data', function (buffer) {
-                //     buffers.push(buffer)
-                // })
-                // child.stdout.on('end', function (buffer) {
-                //     let log = BUffer.concat(buffers)
-                //     console.log(log)
-                // })
+                let child = spawn('sh', [`./${payload.repository.name}.sh`]) // 开启子进程
+                let buffers = []
+                child.stdout.on('data', function (buffer) {
+                    buffers.push(buffer)
+                })
+                child.stdout.on('end', function (buffer) {
+                    let log = BUffer.concat(buffers)
+                    console.log(log)
+                })
             }
         })
     } else {

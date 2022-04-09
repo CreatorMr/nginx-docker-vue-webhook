@@ -1,6 +1,6 @@
 /*
  * @@author: Creator
- * @LastEditTime: 2022-04-09 20:03:11
+ * @LastEditTime: 2022-04-09 20:06:05
  * @Description: 
  */
 const http = require('http')
@@ -11,8 +11,8 @@ function sign(body) {
     return `sha1=` + crypto.createHmac('sha1', SECRET).update(body).digest('hex')
 }
 let server = http.createServer(function (req, res) {
-    console.log(res.method, '/webhook.js')
-    if (res.method === 'PSOT' && req.url === '/webhook') {
+    console.log(req.method, req.url, '/webhook.js')
+    if (req.method === 'PSOT' && req.url === '/webhook') {
         console.log('/webhook.js')
         // 获取请求体
         let buffers = []

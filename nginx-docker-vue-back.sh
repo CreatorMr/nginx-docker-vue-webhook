@@ -1,7 +1,7 @@
 #!/bin/bash
 ###
  # @@author: Creator
- # @LastEditTime: 2022-04-09 20:40:55
+ # @LastEditTime: 2022-04-09 20:47:11
  # @Description: 
 ### 
 
@@ -22,4 +22,4 @@ docker stop vue-back-container
 
 docker rm vue-back-container
 echo "启动新容器"
-docker container run -p 3000:3000 --name vue-back-container -d vue-back
+docker container run -p 3000:3000 --name vue-back-container -d vue-back:1.0

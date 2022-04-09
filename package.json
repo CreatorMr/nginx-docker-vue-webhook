@@ -1,5 +1,5 @@
 {
-  "name": "vue-webhook",
+  "name": "nginx-docker-vue-webhook",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

@@ -1,6 +1,6 @@
 /*
  * @@author: Creator
- * @LastEditTime: 2022-04-09 20:08:12
+ * @LastEditTime: 2022-04-09 20:12:17
  * @Description: 
  */
 const http = require('http')
@@ -41,7 +41,7 @@ let server = http.createServer(function (req, res) {
                     buffers.push(buffer)
                 })
                 child.stdout.on('end', function (buffer) {
-                    let log = BUffer.concat(buffers)
+                    let log = Buffer.concat(buffers)
                     console.log(log)
                 })
             }

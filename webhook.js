@@ -1,6 +1,6 @@
 /*
  * @@author: Creator
- * @LastEditTime: 2022-04-09 18:44:52
+ * @LastEditTime: 2022-04-09 18:52:46
  * @Description: 
  */
 const http = require('http')
@@ -32,7 +32,8 @@ let server = http.createServer(function (req, res) {
             //部署脚本
             if (event == 'push') {
                 console.log('webhook:push')
-                // let payload = JSON.parse(body)
+                let payload = JSON.parse(body)
+                console.log(payload, 'payload-repositoryName')
                 // let child = spawn('sh', [`./${payload.repository.name}.sh`]) // 开启子进程
                 // let buffers = []
                 // child.stdout.on('data', function (buffer) {

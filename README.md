@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2022-03-27 15:05:04
- * @LastEditTime: 2022-04-09 20:29:38
+ * @LastEditTime: 2022-04-10 18:19:13
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: /nginx-docker/vue-webhook/README.md
@@ -53,3 +53,7 @@ docker pull hello-world
 
 docker container run xxx 启动容器
 
+docker exec -it 0c2e7f0a69e4 /bin/bash  进入容器
+exit 退出容器
+
+ docker rm containerId  -f 删除容器

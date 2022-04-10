@@ -1,10 +1,4 @@
 #!/bin/bash
-###
- # @@author: Creator
- # @LastEditTime: 2022-04-10 18:35:07
- # @Description: 
-### 
-
 WORK_PATH="/usr/project/nginx-docker-vue-front"
 cd $WORK_PATH
 echo "先清除老代码"
@@ -18,7 +12,7 @@ echo "编译"
 npm run build
 
 echo "开始构建"
-docker build -t vue-front:1.0 . 
+docker build -t vue-front:1.0 .
 
 echo "停止旧容器并删除旧容器"
 

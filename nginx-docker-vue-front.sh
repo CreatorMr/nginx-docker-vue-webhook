@@ -1,7 +1,7 @@
 #!/bin/bash
 ###
  # @@author: Creator
- # @LastEditTime: 2022-04-09 20:40:52
+ # @LastEditTime: 2022-04-10 17:35:07
  # @Description: 
 ### 
 
@@ -26,4 +26,4 @@ docker stop vue-front-container
 
 docker rm vue-front-container
 echo "启动新容器"
-docker container run -p 80:80 --name vue-front-container -d vue-front
+docker container run -p 80:80 --name vue-front-container -d vue-front:1.0

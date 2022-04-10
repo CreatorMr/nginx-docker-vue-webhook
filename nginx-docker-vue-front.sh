@@ -1,7 +1,7 @@
 #!/bin/bash
 ###
  # @@author: Creator
- # @LastEditTime: 2022-04-10 18:19:53
+ # @LastEditTime: 2022-04-10 18:35:07
  # @Description: 
 ### 
 
@@ -18,7 +18,7 @@ echo "编译"
 npm run build
 
 echo "开始构建"
-docker build -t vue-front:1.0 .  --no-cache
+docker build -t vue-front:1.0 . 
 
 echo "停止旧容器并删除旧容器"
 
